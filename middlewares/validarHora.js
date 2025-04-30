@@ -4,7 +4,12 @@ const validarHora = (req, res, next) => {
     if (hora > 12 && hora < 24) {
         next();
     } else {
-        res.send('<p>Aún no son las 12 de la mañana</p>');
+        res.send(`
+            <p>Aún no son las 12 de la mañana</p>
+            <form action="/" method="get">
+                <button type="submit">Return</button>
+            </form>
+            `);
     }
 };
 
