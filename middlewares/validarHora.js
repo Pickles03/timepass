@@ -14,3 +14,17 @@ const validarHora = (req, res, next) => {
 };
 
 module.exports = validarHora;
+
+/* review version
+
+const hora = 12
+
+module.exports = (req, res, next) => {
+    if (req.currentHour < hora || req.currentHour >= 24) {
+        res.locals.mensaje = `Aún no es la hora, espera hasta las 14:00 para entrar`;
+        return res.redirect('/?mensaje=' + encodeURIComponent(res.locals.mensaje));
+    }
+    next();
+}
+
+*/
